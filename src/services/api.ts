@@ -8,8 +8,9 @@ import type {
   UpdateBookData,
 } from "../types";
 
-const API_BASE_URL =
-  import.meta.env.BASE_URL_API || "http://localhost:3000";
+const API_BASE_URL = import.meta.env.VITE_BASE_URL_API;
+
+console.log("API_BASE_URL:", API_BASE_URL);
 
 // Create axios instance
 const api = axios.create({

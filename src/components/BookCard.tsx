@@ -82,7 +82,7 @@ const BookCard: React.FC<BookCardProps> = ({
 
   return (
     <Card
-      className={`group relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer ${className}`}
+      className={`group pt-0 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer ${className}`}
       onClick={handleCardClick}
     >
       {book.image && (
