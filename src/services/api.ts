@@ -63,8 +63,13 @@ export const authAPI = {
 
 // Books API
 export const booksAPI = {
-  getAllBooks: async (): Promise<Book[]> => {
-    const response = await api.get("/books");
+  getAllBooks: async (params?: {
+    search?: string;
+    language?: string;
+    sortBy?: "title" | "published_at";
+    sortOrder?: "asc" | "desc";
+  }): Promise<Book[]> => {
+    const response = await api.get("/books", { params });
     return response.data;
   },
 
