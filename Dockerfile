@@ -7,8 +7,10 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies (use npm install to properly handle optional dependencies in Alpine)
-RUN npm install
+# Install dependencies (remove package-lock.json first to fix npm optional deps bug)
+RUN rm -f package-lock.json && \
+    npm install && \
+    npm rebuild rollup
 
 # Copy all source files
 COPY . .
